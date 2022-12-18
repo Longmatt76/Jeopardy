@@ -1,0 +1,81 @@
+
+
+h1 {
+  font-family: "Anton";
+  text-shadow: 3px 3px 0px black;
+}
+
+#jeopardy {
+  background-color: #060ce9;
+  border: solid black 6px;
+}
+
+#cat-row td {
+  height: 83px;
+  width: 130px;
+  outline: solid black 6px;
+  color: white;
+  font-family: "Anton";
+  text-align: center;
+  font-size: 1em;
+  line-height: 83px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0px black;
+ 
+}
+
+.catText {
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;
+  padding-top: 10px;
+}
+
+
+#clue-row td {
+  height: 118px;
+  width: 130px;
+  outline: solid black 3px;
+  color: white;
+  font-family: "Anton";
+  text-align: center;
+  font-size: 15px;
+  font-size: 1.3vh;
+  /* line-height: 118px; */
+  letter-spacing: 1px;
+  text-shadow: .8px .8px 0px black;
+}
+
+:hover #clue-row {
+  cursor: pointer;
+}
+.quest {
+  background-color: white;
+  text-align: center;
+  font-size: 40px;
+  border: 2px solid black;
+  border-radius: 50%;
+  height: 60px;
+  line-height: 60px;
+  width: 60px;
+  font-family: "Bebas+Neue";
+  margin-top: 15px;
+  margin-left: 45px;
+  pointer-events: none;
+  color: black;
+}
+
+button {
+  box-shadow: 2px 2px 1px black;
+  font-family: "Bebas+Neue";
+  background-color: midnightblue;
+}
+
+#spin {
+  display: none;
+}
+
+body{
+ background-image:url("assets/New+Background.png") ;
+}
