@@ -107,7 +107,7 @@ function handleClick(evt) {
 //   }
 // });
 
-  // something is wrong here but I can't figure out the issue, if lines 112-114 are enabled it will show the answer on
+  // something is wrong here but I can't figure out the issue, if lines 116-118 are enabled it will show the answer on
     // the 1st click, if it's not enabled it will show the question on first click but I can never get it to show the 
     // question and answer even though I think that's what the logic it saying.
   if (!info.showing) {
