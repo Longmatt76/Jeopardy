@@ -44,7 +44,7 @@ h1 {
   font-size: 1.3vh;
   /* line-height: 118px; */
   letter-spacing: 1px;
-  text-shadow: .8px .8px 0px black;
+  /* text-shadow: .8px .8px 0px black; */
 }
 
 :hover #clue-row {

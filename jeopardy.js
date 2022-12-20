@@ -1,7 +1,6 @@
-
-// Hello Alexander, I tried my hardest here and I think it's 95% correct but there's a game breaking bug that I can't 
-// fix as you will discover. There's also some issues (like text vertical centering on clues/answers) that I will fix 
-// after I figure out the primary issue. 
+// Hello Alexander, I tried my hardest here and I think it's 95% correct but there's a game breaking bug that I can't
+// fix as you will discover. There's also some issues (like text vertical centering on clues/answers) that I will fix
+// after I figure out the primary issue.
 
 let categories = [];
 const numCategories = 6;
@@ -16,12 +15,10 @@ async function getCategoryIds() {
   const randomOffset = Math.floor(Math.random() * 5000);
   const response = await axios.get("http://jservice.io/api/categories", {
     params: { count: 100, offset: randomOffset },
-  });
-  let notEnoughClues = [];
-  notEnoughClues = response.data.filter((category) => {
-    if (category.clues_count >= 5) return notEnoughClues;
-  });
-  let categoryIDs = notEnoughClues.map((category) => ({
+  }); 
+  const categoryIDs = response.data.filter(
+    (category) => category.clues_count >= 5
+  ).map((category) => ({
     id: category.id,
   }));
 
@@ -42,7 +39,7 @@ async function getCategory(categoryID) {
     answer: clue.answer,
     showing: null,
   }));
-  return { title: title, clues: _.sampleSize(allClues, 5) };
+  return { title, clues: _.sampleSize(allClues, 5) };
 }
 
 // This function builds the html gameboard by building a table looping through the numCategories and numClues
@@ -98,24 +95,15 @@ function handleClick(evt) {
   let info = categories[x].clues[y];
   let display = "";
 
-  // I wrote this function to remove the divs that hold the initial ? but I'm not sure if it's needed and I'm
-// also starting to think this approach may be messing up the handleClick function?
-
-// $("#jeopardy").on("click", $(".quest"), function (e) {
-//   if (e.target.firstChild) {
-//     e.target.firstChild.remove();
-//   }
-// });
-
-  // something is wrong here but I can't figure out the issue, if lines 116-118 are enabled it will show the answer on
-    // the 1st click, if it's not enabled it will show the question on first click but I can never get it to show the 
-    // question and answer even though I think that's what the logic it saying.
+ 
   if (!info.showing) {
+    console.warn("showing");
     display = info.question;
     info.showing = "question";
-    //  } else if (info.showing === "question") {
-    //   display = info.answer;
-    //   info.showing = "answer";
+  } else if (info.showing === "question") {
+    console.warn("showing2");
+    display = info.answer;
+    info.showing = "answer";
   } else {
     return;
   }
@@ -167,9 +155,5 @@ async function setupAndStart() {
 /** On click of start / restart button, set up game. */
 
 $("#start").on("click", setupAndStart);
-$("#jeopardy").on("click", "td", handleClick);
-// TODO
 
-/** On page load, add event handler for clicking clues */
 
-// TODO
