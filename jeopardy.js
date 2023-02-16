@@ -1,6 +1,3 @@
-// Hello Alexander, I tried my hardest here and I think it's 95% correct but there's a game breaking bug that I can't
-// fix as you will discover. There's also some issues (like text vertical centering on clues/answers) that I will fix
-// after I figure out the primary issue.
 
 let categories = [];
 const numCategories = 6;
@@ -97,11 +94,9 @@ function handleClick(evt) {
 
  
   if (!info.showing) {
-    console.warn("showing");
     display = info.question;
     info.showing = "question";
   } else if (info.showing === "question") {
-    console.warn("showing2");
     display = info.answer;
     info.showing = "answer";
   } else {
